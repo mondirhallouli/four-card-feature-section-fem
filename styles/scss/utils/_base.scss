@@ -1,0 +1,18 @@
+@use "sass:math";
+
+@function rem($pixel) {
+    @return math.div($pixel, 16)+rem;
+}
+
+// base styles
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fafafa;
+}

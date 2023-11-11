@@ -1,0 +1,117 @@
+@use "../utils" as u;
+
+.main {
+    padding: u.rem(30);
+
+    @include u.breakpoints-up("large") {
+        padding-inline: 0;
+        max-width: u.rem(1112);
+        margin-inline: auto;
+    }
+
+    .header {
+        margin-bottom: u.rem(78);
+
+        &__title {
+            font-family: var(--font-family);
+            font-size: u.rem(25);
+            text-align: center;
+            color: var(--darker-blue);
+
+            &:first-child {
+                font-weight: var(--text-light);
+            }
+        }
+
+        &__desc {
+            max-width: u.rem(506);
+            margin-top: u.rem(25);
+            margin-inline: auto;
+            font-family: var(--font-family);
+            font-weight: var(--text-regular);
+            font-size: u.rem(15);
+            text-align: center;
+            color: var(--gray-blue);
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include u.breakpoints-up("xlarge") {
+            flex-direction: row;
+            justify-content: center;
+            gap: u.rem(28)
+        }
+
+        &__card {
+            width: u.rem(312);
+            margin-bottom: u.rem(26);
+            padding: u.rem(28);
+            border-top: solid 4px;
+            border-radius: u.rem(6);
+            background-color: white;
+            box-shadow: 0px 5px 20px -10px var(--light-gray);
+
+            @include u.breakpoints-up("xlarge") {
+                width: u.rem(350);
+            }
+
+            &-title {
+                font-family: var(--font-family);
+                font-size: u.rem(22);
+                line-height: 1.8;
+                color: var(--darker-blue);
+            }
+
+            &-desc {
+                font-family: var(--font-family);
+                font-size: u.rem(15);
+                line-height: 1.8;
+                color: var(--gray-blue);
+                margin-bottom: u.rem(40);
+            }
+
+            &-icon {
+                height: u.rem(60);
+                display: flex;
+                justify-content: end;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+
+        &__mid-wrapper {
+            width: u.rem(312);
+
+            .cards__card {
+                width: 100%;
+            }
+
+            @include u.breakpoints-up("xlarge") {
+                width: u.rem(350);
+            }
+        }
+
+        .supervisor {
+            border-top-color: var(--cyan);
+        }
+
+        .builder {
+            border-top-color: var(--red);
+        }
+
+        .karma {
+            border-top-color: var(--orange);
+        }
+
+        .calculator {
+            border-top-color: var(--blue);
+        }
+    }
+}
